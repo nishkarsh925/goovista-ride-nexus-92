@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 6%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Goovista Brand Colors */
+    --taxi-yellow: 45 100% 50%;
+    --taxi-black: 0 0% 6%;
+    --taxi-white: 0 0% 100%;
+    --taxi-gray: 0 0% 45%;
+    --taxi-light-gray: 0 0% 96%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--taxi-yellow)), hsl(45 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--taxi-black)), hsl(0 0% 15%));
+    
+    /* Shadows */
+    --shadow-taxi: 0 10px 30px -10px hsl(var(--taxi-yellow) / 0.3);
+    --shadow-dark: 0 10px 30px -10px hsl(var(--taxi-black) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 45 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
+  }
+  .animate-shine {
+    animation: shine 5s linear infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .gradient-taxi {
+    background: var(--gradient-primary);
+  }
+  
+  .shadow-taxi {
+    box-shadow: var(--shadow-taxi);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
