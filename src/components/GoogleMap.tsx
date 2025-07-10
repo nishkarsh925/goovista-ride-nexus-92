@@ -142,7 +142,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ pickupLocation, destination, onRo
         minHeight: '400px',
       }}
     >
-      <style jsx>{`
+      <style>{`
         .gm-style .gm-style-cc,
         .gm-style .gm-style-mtc,
         .gm-style .gmnoprint,
